@@ -1,10 +1,12 @@
 mod concatenate;
 mod notes;
 mod about_struct;
+mod about_enum;
 
 use concatenate::concatenate_strings;
 use notes:: notes;
 use about_struct:: struct_notes;
+use about_enum:: enums_notes;
 
 fn main() {
     notes();
@@ -16,4 +18,7 @@ fn main() {
     println!();
     println!("------------STRUCT---------------");
     struct_notes();
+    println!();
+    println!("------------ENUMs---------------");
+    enums_notes();
 }
