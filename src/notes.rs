@@ -30,6 +30,11 @@ pub fn notes() {
 
     //Arrays
     let _numbers: [i32; 3] = [1, 2, 3];
+    let other_arr: [u8; 5] = [100; 5];
+
+    // print structure of array and other objects
+    println!("{:?}", other_arr);
+
     let _days_if_week: [&str; 7] = [
         "Monday",
         "Tuesday",
@@ -44,10 +49,11 @@ pub fn notes() {
     let _last_element = _days_if_week[_days_if_week.len() - 1];
 
     // Slices: which represent a variable-size sequence of elements of type T
-    let slice = &_days_if_week[1..3];
+    let slice = &_days_if_week[1..3]; // 1st index is inclusive, 3rd index is exclusive
+    let _new_slice = &_days_if_week[.. 4];
     let _first_slice_element = slice[0];
 
-    // Tuples : a fixed-size sequence of elements of different types
+    // Tuples : a fixed-size sequence of elements of different data types
     let person = ("Alice", 30);
 
     let _name = person.0;
@@ -58,6 +64,11 @@ pub fn notes() {
         "The person's name is {} {} and their age is {}.",
         person.0 .0, person.0 .1, person.1
     );
+
+    let tuple2: (u8, bool, f32)  = (5, true, 2.1);
+    // Destructing
+    let (a, b, c) = tuple2;
+    println!("{:?}", tuple2);
 
     // Unit tupe:  which represents an empty tuple and is used when no value is needed
     let _unit_type = ();
@@ -140,6 +151,14 @@ pub fn notes() {
         2 => println!("The number is two!"),
         3 => println!("The number is three!"),
         _ => println!("The number is something else!"),
+    }
+
+    let i = 5;
+    match i {
+        0 => println!("0"),
+        1 | 2 => println!("1, 2"),
+        3..=4 => println!("3, 4"), // = sign makes 4 also inclusive
+        _ => println!(" Default ")
     }
 
     // Expression based
@@ -252,6 +271,8 @@ pub fn notes() {
     let modified_string = modify_string(&original_str);
 
     println!("modified_string: {}", modified_string); // "Hello, world! modified"
+
+
 
 
 }
